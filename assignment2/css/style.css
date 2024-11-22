@@ -81,17 +81,19 @@ header nav menu li a:hover{
 
 
 }
-
+/**mobile**/
 header .mobile {
   display: none;
   position: relative;
+  left: -35px;
+  top: 30px;
 }
 
 header .mobile input {
   position: absolute;
   top: 25%;
   right: 0;
-  width: 20px;
+  width: 30px;
   height: 20px;
   margin: 0;
   opacity: 0;
@@ -101,7 +103,7 @@ header .mobile span {
   position: absolute;
   right: 0;
   top: 50%;
-  width: 20px;
+  width: 40px;
   height: 2px;
   background-color: red;
 }
@@ -251,6 +253,7 @@ section#pg1 > h2:nth-child(1){
  * Then directly style the <img> elements inside those divs */
 section#pg1 > div img{
   width: 100%;
+  border-radius: 28px;
 }
 
 /**section#pg2{
