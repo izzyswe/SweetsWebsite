@@ -1,0 +1,358 @@
+html{
+  scroll-behavior: smooth;
+}
+body{
+  margin:0;
+  background: #FFFAED;
+}
+
+/*Misc fonts and stuffs*/
+h1{
+  font-family: "Outfit", sans-serif;
+  color: white;
+  font-size: 3em;
+}
+
+h2,h3,h4,h5,h6,p,a,li{
+ font-family: "Outfit", sans-serif; 
+}
+
+/*the first container*/
+header{
+  display: flex;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  height: 195px;
+  /**to position the entire header container in front of the ma in and footer.**/
+  z-index: 9999;
+}
+/**the img container**/
+header div{
+  /**adjusting the container for the image to fit in**/
+  width: auto;
+  height: 100%;
+  /**uhhh something**/
+  flex-grow: 1;
+}
+header > div:nth-child(1) {
+  display: flex;
+  align-items: center;
+}
+/** The image itself**/
+header div img{
+  /**adjusting the image sizing from its original resolution**/
+  width: auto;
+  height: 40%;
+  border-radius: 25px;
+}
+
+/*The navigation Side*/
+header nav menu{
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+header nav menu li{
+  /*because i always get confused first is y and second is x axis*/
+  padding: 0 0px;
+}
+/*the actual lettering or word of the navigation*/
+header nav menu li a{
+  color: #f1faee;
+  position: relative;
+  padding: 10px 20px;
+  text-decoration: none;
+  text-shadow: 3px 3px 2px black;
+  text-align: center;
+  color:white;
+  font-size: 30px;
+  font-weight: bold; 
+}
+/*hover effect*/
+header nav menu li a:hover{
+  text-shadow: 0px 0px black;
+  background: black;
+  padding: 5px 20px;
+  text-align: center;
+  border-radius: 5px;
+  color:white;
+
+
+}
+
+header .mobile {
+  display: none;
+  position: relative;
+}
+
+header .mobile input {
+  position: absolute;
+  top: 25%;
+  right: 0;
+  width: 20px;
+  height: 20px;
+  margin: 0;
+  opacity: 0;
+}
+
+header .mobile span {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  width: 20px;
+  height: 2px;
+  background-color: red;
+}
+
+header .mobile > span:nth-child(2) {
+  transform: translateY(-10px);
+}
+
+header .mobile > span:nth-child(4) {
+  transform: translateY(10px);
+}
+
+header .mobile input:checked + span {
+  transform: translateY(0) rotate(45deg);
+}
+
+header .mobile input:checked + span + span {
+  opacity: 0;
+}
+
+header .mobile input:checked + span + span + span {
+  transform: translateY(0) rotate(-45deg);
+}
+
+header .mobile input:checked + span + span + span + nav {
+  display: block;
+}
+
+header .mobile nav {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 100%;
+}
+
+header .mobile nav menu {
+  flex-direction: column;
+  text-align: right;
+}
+
+/**Mast Header (the big ole picture)**/
+/**Mast container**/
+.Mast{
+  height: 100vh;
+  background-image: url("../img/mast_1.jpeg");
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  /*shaping the how the head section will fit the image*/
+  clip-path: polygon(25.2% 0%, 100% 0%, 100% 100%, 0% 59.8%);
+}
+.Mast div{
+  /*background transparency*/
+  background-color: rgba(0, 0, 0, .6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  height:100%;
+}
+.Mast div > h1{
+  position: absolute;
+  top: 30%;
+}
+.Mast div > p{
+  position: absolute;
+  color: white;
+  font-size: 30px;
+  top: 45%;
+}
+.Mast div > a{
+  position: absolute;
+  top: 60%;
+  text-decoration: none;
+  background: #D63333;
+  padding: 10px 90px;
+  text-align: center;
+  border-radius: 22px;
+  color:white;
+  font-weight: bold;
+  transition: font-size 0.3s;
+}
+.Mast div > a:hover{
+  background: #4F1111;
+  font-size: 25px;
+}
+.Mast div img{
+  width: 150%;
+  height: 100%;
+}
+
+/*Product Section*/
+main > section{
+  width: auto;
+  text-align: center;
+  padding: 20px;
+}
+
+/*Section Heading Title*/
+section#pg1 > h2:nth-child(1){
+  color:#D63333;
+  text-shadow: 1px 1px black;
+  font-size: 100px;
+}
+
+.slide-right{
+  position: relative;
+  transform: translateX(-100px);
+  opacity: 0;
+  transition: all .9s ease;
+}
+.slide-right.active{
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.grid-container{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto; /*automatically adjusting row height*/
+  gap: 10px; /* Spacing between items */
+  padding: 1px;
+}
+.grid-container div {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+  background-color: #D9D4C8; /* Added background for better visibility */
+  border-radius: 20px;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+.grid-container div:hover {
+  background:  #BD5555;
+  transform: scale(0.9);
+}
+.grid-container div a{
+  cursor: pointer;
+  text-decoration: none;
+  color: black;
+}
+
+/*Product Image adjustments*/
+
+/* This always confused me
+ * We are targeting the section with the id "pg1"
+ * Within "pg1", target all <div> elements
+ * Then directly style the <img> elements inside those divs */
+section#pg1 > div img{
+  width: 100%;
+}
+
+/**section#pg2{
+  background-image: url("../img/mast_1.jpeg");
+  background-attachment: fixed;
+  background-size:cover;
+  background-position: center;
+  z-index: -1;
+  clip-path: polygon(63.2% 0%, 79.2% 0%, 100% 50%, 77.8% 100%, 61.4% 100%, 84.4% 50%);
+}**/
+
+main > section#pg2{
+
+  display: flex; /* Enables flexbox for alignment */
+  flex-direction: column; /* Stack items vertically */
+
+  align-items: center; /* Centers content horizontally */
+  text-align: center; /* Centers text inside the divs */
+
+
+  box-sizing: border-box; /* Ensures padding doesn't affect width/height */
+}
+
+main > section#pg2 h2{ font-size: 80px; }
+main > section#pg2 > div h3{ font-size: 50px; }
+main > section#pg2 > div > p{ font-size: 30px; }
+
+.slide-down{
+  transform: translateY(-150px);
+  opacity: 0;
+  transition: all .5s ease;
+}
+.slide-down.active{
+  transform: translateY(0px);
+  opacity: 1;
+}
+
+main > section#pg3{
+  text-align: center; /* Centers the heading */
+  padding: 20px;
+}
+
+main > section#pg3 h2{ font-size: 80px; }
+main > section#pg3 > div > div > h3{ font-size:50px; }
+main > section#pg3 > div > div > p{ font-size: 30px;}
+
+/*Location Section*/
+.grid1-container {
+  display: flex; /* Enables Flexbox */
+  flex-direction: row; /* Positions items side by side */
+  justify-content: center; /* Centers the columns horizontally */
+  align-items: center; /* Aligns items vertically within their container */
+  gap: 300px; /* Adds spacing between columns */
+}
+
+.grid1-container div {
+  max-width: 400px; /* Limits the content width for better readability */
+  text-align: left; /* Aligns text inside the div */
+}
+
+/*Footer*/
+footer {
+    background-color: #2d2a26;
+    display: flex;
+    padding: 20px 10px;
+    justify-content: space-between;
+}
+footer > div{
+  /**adjusting the container for the image to fit in**/
+  width: auto;
+  height: 100%;
+ }
+
+footer h4{
+  margin-bottom: 5px;
+  color: white;
+  font-size: 20px;
+}
+
+footer p{
+  margin-top: 0px;
+  color: white;
+  font-size: 15px;
+}
+
+footer div img{
+  /**adjusting the image sizing from its original resolution**/
+  margin-bottom: 5px;
+  width: 280px;
+  height: auto;
+  border-radius: 25px;
+}
+
+.btn{
+  cursor: pointer;
+  border-radius: 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+#pg3 iframe {
+  width: 100%;
+}
