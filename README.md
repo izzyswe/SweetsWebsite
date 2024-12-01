@@ -1,8 +1,6 @@
 # SweetsWebsite
 Created a sweets shop, Assignment 2
 
-live site: https://github.com/izzyswe/SweetsWebsite/tree/main/assignment2
-
 ## Desktop View <br>
 <img width="1800" alt="Screenshot 2024-11-22 at 5 39 40 PM" src="https://github.com/user-attachments/assets/bb254304-60e1-4bf8-b4cf-42c68da02b45"><br>
 ## Mobile View<br>
